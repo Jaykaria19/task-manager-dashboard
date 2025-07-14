@@ -1,15 +1,14 @@
-import './App.css'
-import { AuthProvider } from './providers/AuthProvider'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom' 
-import { ProtectedRoute } from './components/auth/ProtectedRoute'
-import Dashboard from './components/Dashboard'
-import Signup from './components/auth/SignUp'
-import Login from './components/auth/Login'
+import './App.css';
+import { AuthProvider } from './providers/AuthProvider';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
+import Dashboard from './components/Dashboard';
+import Signup from './components/auth/SignUp';
+import Login from './components/auth/Login';
 
-function App() { 
-
+function App() {
   return (
-   <AuthProvider>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -26,7 +25,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;

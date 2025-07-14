@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "formik": "^2.4.6",
     "react": "^19.1.0",
@@ -19,6 +20,7 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",
+    "uuidv4": "^6.2.13",
     "yup": "^1.6.1"
   },
   "devDependencies": {
