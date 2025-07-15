@@ -17,19 +17,19 @@ export const TaskProvider: React.FC<TTaskProviderProps> = ({ children }) => {
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
 
-  // Update task status if due date is past
-  const updateOverdueTasks = useCallback(() => {
-    const updatedTasks = tasks.map((task) => {
-      if (new Date(task.dueDate) < new Date() && task.status !== 'Done') {
-        return { ...task, status: 'Done' };
-      }
-      return task;
-    });
-    setTasks(updatedTasks as any);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-  }, [tasks]);
-
-  useEffect(() => {updateOverdueTasks(); }, [updateOverdueTasks]);
+   
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        new Date(task.dueDate) < new Date() && task.status !== 'Done'
+          ? { ...task, status: 'Done' as TTask['status'] }
+          : task
+      )
+    );
+  }, 60000); // Run every 60 seconds
+  return () => clearInterval(interval);
+}, []);
 
   const addTask = useCallback((task: Omit<TTask, 'id' | 'userEmail'>) => {
       if (!authContext?.user?.email) return;

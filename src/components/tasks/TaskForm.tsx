@@ -5,8 +5,8 @@ import { TextField, Button, MenuItem } from '@mui/material';
 import type { TTask } from '../../types/TTask';
 import { TaskContext } from '../../contexts/TaskContext';
 
-const STATUS_OPTIONS = ['Todo', 'In Progress', 'Done'] as const;
-const PRIORITY_OPTIONS = ['Low', 'Medium', 'High'] as const;
+const STATUS_OPTIONS = ['Todo', 'In Progress', 'Done'] ;
+const PRIORITY_OPTIONS = ['Low', 'Medium', 'High'] ;
 
 const validationSchema = Yup.object({
   title: Yup.string().required('Title is required'),

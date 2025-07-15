@@ -8,8 +8,8 @@ export type TTask = {
   description: string;
   status: TTaskStatus;
   priority: TTaskPriority;
-  dueDate: string; // ISO date string (e.g., '2025-07-15')
-  userEmail: string; // To associate tasks with the logged-in user
+  dueDate: string;  
+  userEmail: string; 
 };
 
 export type TTaskContext = {
