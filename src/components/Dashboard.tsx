@@ -122,6 +122,7 @@ export default function Dashboard() {
               variant="outlined"
               size="small"
               value={tempDueDate}
+              InputLabelProps={{ shrink: true }} 
               onChange={(e) => setTempDueDate(e.target.value)}
             />
              </FormControl>

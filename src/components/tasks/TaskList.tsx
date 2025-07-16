@@ -89,7 +89,7 @@ const TaskList: React.FC<TTaskListProps> = ({ onEditTask,searchQuery,statusFilte
 
   return (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col ">
         <div className="flex space-x-4 overflow-x-auto flex-1">
           {['Todo', 'In Progress', 'Done'].map((status) => (
             <SortableContext
